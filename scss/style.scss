@@ -1,0 +1,40 @@
+$color-fondo: #111;
+$color-card: #1c1c1c;
+$color-texto: white;
+$color-boton: #0d6efd;
+$espaciado: 20px;
+
+body {
+  background-color: $color-fondo;
+  color: $color-texto;
+}
+
+.container {
+  padding: $espaciado;
+}
+
+.card {
+  background-color: $color-card;
+
+  .card-title {
+    color: $color-texto;
+  }
+
+  .btn {
+    background-color: $color-boton;
+  }
+}
+
+// Interpolación 1
+$tipo: "margin";
+
+.caja {
+  #{$tipo}-top: 20px;
+}
+
+// Interpolación 2
+$lado: "left";
+
+.texto {
+  border-#{$lado}: 5px solid white;
+}
