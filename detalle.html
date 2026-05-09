@@ -1,0 +1,67 @@
+<h4>Sinopsis</h4>
+<p>Texto más largo contando la historia...</p>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Detalle</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container mt-4">
+  <h1 id="titulo"></h1>
+  <img id="imagen" class="img-fluid mb-3">
+  <p id="descripcion"></p>
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const pelicula = params.get("pelicula");
+
+const data = {
+  avatar: {
+    titulo: "Avatar",
+    imagen: "https://upload.wikimedia.org/wikipedia/en/d/d6/Avatar_%282009_film%29_poster.jpg",
+    descripcion: "Humanos exploran Pandora y se enfrentan a una civilización alienígena."
+  },
+  barbie: {
+    titulo: "Barbie",
+    imagen: "https://upload.wikimedia.org/wikipedia/en/0/0b/Barbie_2023_poster.jpg",
+    descripcion: "Barbie vive una aventura fuera de su mundo perfecto."
+  },
+  avengers: {
+    titulo: "Avengers",
+    imagen: "https://upload.wikimedia.org/wikipedia/en/f/f9/TheAvengers2012Poster.jpg",
+    descripcion: "Los héroes más poderosos se unen para salvar el mundo."
+  },
+  oppenheimer: {
+    titulo: "Oppenheimer",
+    imagen: "https://upload.wikimedia.org/wikipedia/en/4/4a/Oppenheimer_%282023_film%29.jpg",
+    descripcion: "Historia del creador de la bomba atómica."
+  },
+  spiderman: {
+    titulo: "Spider-Man",
+    imagen: "https://upload.wikimedia.org/wikipedia/en/0/0c/Spider-Man_No_Way_Home_poster.jpg",
+    descripcion: "Peter Parker enfrenta nuevas amenazas del multiverso."
+  },
+  frozen: {
+    titulo: "Frozen",
+    imagen: "https://upload.wikimedia.org/wikipedia/en/0/05/Frozen_%282013_film%29_poster.jpg",
+    descripcion: "Una princesa con poderes de hielo lucha por salvar su reino."
+  }
+};
+
+const peli = data[pelicula];
+
+if (peli) {
+  document.getElementById("titulo").textContent = peli.titulo;
+  document.getElementById("imagen").src = peli.imagen;
+  document.getElementById("descripcion").textContent = peli.descripcion;
+}
+</script>
+
+</body>
+</html>
